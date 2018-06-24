@@ -1,5 +1,7 @@
 # Festival Hat
 
+[![Build Status](https://travis-ci.com/mszoernyi/festival-hat.svg?branch=master)](https://travis-ci.com/mszoernyi/festival-hat)
+
 ![FloraLED](https://github.com/mszoernyi/festival-hat/raw/master/flora.gif)
 
 Festival Hat is a simple adruino controller for a custom build LED hat.
