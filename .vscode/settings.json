@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.osx": {
+        "PATH": "/Users/mike/.platformio/penv/bin:/Users/mike/.platformio/penv:/usr/local/opt/e2fsprogs/bin:/Users/mike/.nodenv/shims:/Users/mike/.nodenv/bin:node_modules/.bin:/Users/mike/.npm/bin:/Users/mike/.go/bin:/Users/mike/.rvm/gems/ruby-2.4.1/bin:/Users/mike/.rvm/gems/ruby-2.4.1@global/bin:/Users/mike/.rvm/rubies/ruby-2.4.1/bin:~/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/mike/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Applications/Wireshark.app/Contents/MacOS:/Users/mike/.rvm/bin:/Users/mike/.rvm/bin",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}
