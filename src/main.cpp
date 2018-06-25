@@ -23,39 +23,37 @@ CRGB leds[NUM_LEDS];
 
 // Scenes
 #include <FadeInScene.h>
-#include <Strobe.h>
+#include <StrobeScene.h>
 
 // Setup all our global parts
 Timeline timeline;
 AceButton button(BUTTON_PIN);
 
-void setup()
-{
-    pinMode(BUTTON_PIN, INPUT_PULLUP);
-    Serial.begin(9600);
+void setup() {
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  Serial.begin(9600);
 
-    // TODO : Move this to controller
-    FastLED.addLeds<WS2811, LED_PIN, GRB>(leds, NUM_LEDS)
-        .setCorrection(TypicalLEDStrip);
+  // TODO : Move this to controller
+  FastLED.addLeds<WS2811, LED_PIN, GRB>(leds, NUM_LEDS)
+      .setCorrection(TypicalLEDStrip);
 
-    // Setup all our parts
-    Controller ledController(LED_PIN, NUM_LEDS, leds);
-    button.setEventHandler(ledController.handleButtonEvent);
+  // Setup all our parts
+  HatController hatController(LED_PIN, NUM_LEDS, leds);
+  button.setEventHandler(hatController.handleButtonEvent);
 
-    // Create the scenes
-    Strobe Strobe(200, &timeline, &ledController);
-    FadeInScene fadeInScene(5000, 20, 200, 200, 200, &timeline, &ledController);
-    // Choose a scene to start:
-    // chaseScene.cue(0);
-    // bounceScene.cue(0);
-    // Strobe.cue(-1);
-    fadeInScene.cue(255);
+  // Create the scenes
+  StrobeScene strobe(200, &timeline, &hatController);
+  FadeInScene fadeInScene(5000, 20, 200, 200, 200, &timeline, &hatController);
+  // Choose a scene to start:
+  // chaseScene.cue(0);
+  // bounceScene.cue(0);
+  // Strobe.cue(-1);
+  fadeInScene.cue(255);
 }
 
-void loop()
-{
-    button.check();
-    // timeline.tick() should be called at least once per ms. Calling it more
-    // often is fine.
-    timeline.tick();
+void loop() {
+  button.check();
+  // timeline.tick() should be called at least once per ms. Calling it more
+  // often is fine.
+  timeline.tick();
 }

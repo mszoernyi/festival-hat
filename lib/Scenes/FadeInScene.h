@@ -10,6 +10,7 @@
 #include <Animately.h>
 #include <Arduino.h>
 #include <Core/Timeline.h>
+
 #include <HatController.h>
 
 // By defining that we're using the Animately namespace, we don't have to prefix
@@ -19,7 +20,7 @@ using namespace Animately;
 class FadeInScene {
 public:
   FadeInScene(int duration, int maxBrightness, byte red, byte green, byte blue,
-              Timeline *timeline, Controller *ledController);
+              Timeline *timeline, HatController *hatController);
 
   void fadeAll(int currentBrightness);
   void cue(int val);
@@ -27,7 +28,7 @@ public:
 private:
   //	VARIABLES
   Timeline *_timeline;
-  Controller *_ledController;
+  HatController *_hatController;
   int _duration;
   int _maxBrightness, _currentBrightness;
   byte _red, _green, _blue;
